@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         
         if @user&.save
             login!(@user)
-            redirect_to user_url(@user)
+            redirect_to cats_url
         else
             redirect_to new_user_url
         end

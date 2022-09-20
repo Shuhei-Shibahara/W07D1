@@ -19,12 +19,12 @@ class User < ApplicationRecord
     attr_reader :password
 
     def password=(password)
-        self.password_digest = Bcrypt::Password.create(password)
+        self.password_digest = BCrypt::Password.create(password)
         @password = password
     end
 
     def is_password?(password)
-        password_object = Bcrypt::Password.new(self.password_digest)
+        password_object = BCrypt::Password.new(self.password_digest)
         password_digest.is_password?(password)
     end
 

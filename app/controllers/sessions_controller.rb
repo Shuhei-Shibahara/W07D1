@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         @user = User.find_by_creditials(params[:user][:username], params[:user][:password])
         if @user
             login!(@user)
-            redirect_to user_url(@user)
+            redirect_to cats_url
         else
             redirect_to new_user_url
         end
